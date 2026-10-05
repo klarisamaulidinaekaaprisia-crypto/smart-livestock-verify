@@ -10,33 +10,176 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AktivitasRfidRouteImport } from './routes/aktivitas-rfid'
+import { Route as DataHewanRouteImport } from './routes/data-hewan'
+import { Route as LaporanRouteImport } from './routes/laporan'
+import { Route as PengaturanRouteImport } from './routes/pengaturan'
+import { Route as PenggunaRouteImport } from './routes/pengguna'
+import { Route as RiwayatPemeriksaanRouteImport } from './routes/riwayat-pemeriksaan'
+import { Route as StatusPmkRouteImport } from './routes/status-pmk'
+import { Route as VaksinasiRouteImport } from './routes/vaksinasi'
+import { Route as VerifikasiRfidRouteImport } from './routes/verifikasi-rfid'
+import { Route as DataHewanIndexRouteImport } from './routes/data-hewan.index'
+import { Route as DataHewanIdRouteImport } from './routes/data-hewan.$id'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AktivitasRfidRoute = AktivitasRfidRouteImport.update({
+  id: '/aktivitas-rfid',
+  path: '/aktivitas-rfid',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DataHewanRoute = DataHewanRouteImport.update({
+  id: '/data-hewan',
+  path: '/data-hewan',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LaporanRoute = LaporanRouteImport.update({
+  id: '/laporan',
+  path: '/laporan',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PengaturanRoute = PengaturanRouteImport.update({
+  id: '/pengaturan',
+  path: '/pengaturan',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PenggunaRoute = PenggunaRouteImport.update({
+  id: '/pengguna',
+  path: '/pengguna',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RiwayatPemeriksaanRoute = RiwayatPemeriksaanRouteImport.update({
+  id: '/riwayat-pemeriksaan',
+  path: '/riwayat-pemeriksaan',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StatusPmkRoute = StatusPmkRouteImport.update({
+  id: '/status-pmk',
+  path: '/status-pmk',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VaksinasiRoute = VaksinasiRouteImport.update({
+  id: '/vaksinasi',
+  path: '/vaksinasi',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VerifikasiRfidRoute = VerifikasiRfidRouteImport.update({
+  id: '/verifikasi-rfid',
+  path: '/verifikasi-rfid',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DataHewanIndexRoute = DataHewanIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => DataHewanRoute,
+} as any)
+const DataHewanIdRoute = DataHewanIdRouteImport.update({
+  id: '/$id',
+  path: '/$id',
+  getParentRoute: () => DataHewanRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/aktivitas-rfid': typeof AktivitasRfidRoute
+  '/data-hewan': typeof DataHewanRouteWithChildren
+  '/laporan': typeof LaporanRoute
+  '/pengaturan': typeof PengaturanRoute
+  '/pengguna': typeof PenggunaRoute
+  '/riwayat-pemeriksaan': typeof RiwayatPemeriksaanRoute
+  '/status-pmk': typeof StatusPmkRoute
+  '/vaksinasi': typeof VaksinasiRoute
+  '/verifikasi-rfid': typeof VerifikasiRfidRoute
+  '/data-hewan/$id': typeof DataHewanIdRoute
+  '/data-hewan/': typeof DataHewanIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/aktivitas-rfid': typeof AktivitasRfidRoute
+  '/laporan': typeof LaporanRoute
+  '/pengaturan': typeof PengaturanRoute
+  '/pengguna': typeof PenggunaRoute
+  '/riwayat-pemeriksaan': typeof RiwayatPemeriksaanRoute
+  '/status-pmk': typeof StatusPmkRoute
+  '/vaksinasi': typeof VaksinasiRoute
+  '/verifikasi-rfid': typeof VerifikasiRfidRoute
+  '/data-hewan/$id': typeof DataHewanIdRoute
+  '/data-hewan': typeof DataHewanIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/aktivitas-rfid': typeof AktivitasRfidRoute
+  '/data-hewan': typeof DataHewanRouteWithChildren
+  '/laporan': typeof LaporanRoute
+  '/pengaturan': typeof PengaturanRoute
+  '/pengguna': typeof PenggunaRoute
+  '/riwayat-pemeriksaan': typeof RiwayatPemeriksaanRoute
+  '/status-pmk': typeof StatusPmkRoute
+  '/vaksinasi': typeof VaksinasiRoute
+  '/verifikasi-rfid': typeof VerifikasiRfidRoute
+  '/data-hewan/$id': typeof DataHewanIdRoute
+  '/data-hewan/': typeof DataHewanIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/aktivitas-rfid'
+    | '/data-hewan'
+    | '/laporan'
+    | '/pengaturan'
+    | '/pengguna'
+    | '/riwayat-pemeriksaan'
+    | '/status-pmk'
+    | '/vaksinasi'
+    | '/verifikasi-rfid'
+    | '/data-hewan/$id'
+    | '/data-hewan/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/aktivitas-rfid'
+    | '/laporan'
+    | '/pengaturan'
+    | '/pengguna'
+    | '/riwayat-pemeriksaan'
+    | '/status-pmk'
+    | '/vaksinasi'
+    | '/verifikasi-rfid'
+    | '/data-hewan/$id'
+    | '/data-hewan'
+  id:
+    | '__root__'
+    | '/'
+    | '/aktivitas-rfid'
+    | '/data-hewan'
+    | '/laporan'
+    | '/pengaturan'
+    | '/pengguna'
+    | '/riwayat-pemeriksaan'
+    | '/status-pmk'
+    | '/vaksinasi'
+    | '/verifikasi-rfid'
+    | '/data-hewan/$id'
+    | '/data-hewan/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AktivitasRfidRoute: typeof AktivitasRfidRoute
+  DataHewanRoute: typeof DataHewanRouteWithChildren
+  LaporanRoute: typeof LaporanRoute
+  PengaturanRoute: typeof PengaturanRoute
+  PenggunaRoute: typeof PenggunaRoute
+  RiwayatPemeriksaanRoute: typeof RiwayatPemeriksaanRoute
+  StatusPmkRoute: typeof StatusPmkRoute
+  VaksinasiRoute: typeof VaksinasiRoute
+  VerifikasiRfidRoute: typeof VerifikasiRfidRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +191,111 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/aktivitas-rfid': {
+      id: '/aktivitas-rfid'
+      path: '/aktivitas-rfid'
+      fullPath: '/aktivitas-rfid'
+      preLoaderRoute: typeof AktivitasRfidRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/data-hewan': {
+      id: '/data-hewan'
+      path: '/data-hewan'
+      fullPath: '/data-hewan'
+      preLoaderRoute: typeof DataHewanRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/laporan': {
+      id: '/laporan'
+      path: '/laporan'
+      fullPath: '/laporan'
+      preLoaderRoute: typeof LaporanRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pengaturan': {
+      id: '/pengaturan'
+      path: '/pengaturan'
+      fullPath: '/pengaturan'
+      preLoaderRoute: typeof PengaturanRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pengguna': {
+      id: '/pengguna'
+      path: '/pengguna'
+      fullPath: '/pengguna'
+      preLoaderRoute: typeof PenggunaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/riwayat-pemeriksaan': {
+      id: '/riwayat-pemeriksaan'
+      path: '/riwayat-pemeriksaan'
+      fullPath: '/riwayat-pemeriksaan'
+      preLoaderRoute: typeof RiwayatPemeriksaanRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/status-pmk': {
+      id: '/status-pmk'
+      path: '/status-pmk'
+      fullPath: '/status-pmk'
+      preLoaderRoute: typeof StatusPmkRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/vaksinasi': {
+      id: '/vaksinasi'
+      path: '/vaksinasi'
+      fullPath: '/vaksinasi'
+      preLoaderRoute: typeof VaksinasiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/verifikasi-rfid': {
+      id: '/verifikasi-rfid'
+      path: '/verifikasi-rfid'
+      fullPath: '/verifikasi-rfid'
+      preLoaderRoute: typeof VerifikasiRfidRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/data-hewan/': {
+      id: '/data-hewan/'
+      path: '/'
+      fullPath: '/data-hewan/'
+      preLoaderRoute: typeof DataHewanIndexRouteImport
+      parentRoute: typeof DataHewanRoute
+    }
+    '/data-hewan/$id': {
+      id: '/data-hewan/$id'
+      path: '/$id'
+      fullPath: '/data-hewan/$id'
+      preLoaderRoute: typeof DataHewanIdRouteImport
+      parentRoute: typeof DataHewanRoute
+    }
   }
 }
 
+interface DataHewanRouteChildren {
+  DataHewanIdRoute: typeof DataHewanIdRoute
+  DataHewanIndexRoute: typeof DataHewanIndexRoute
+}
+
+const DataHewanRouteChildren: DataHewanRouteChildren = {
+  DataHewanIdRoute: DataHewanIdRoute,
+  DataHewanIndexRoute: DataHewanIndexRoute,
+}
+
+const DataHewanRouteWithChildren = DataHewanRoute._addFileChildren(
+  DataHewanRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AktivitasRfidRoute: AktivitasRfidRoute,
+  DataHewanRoute: DataHewanRouteWithChildren,
+  LaporanRoute: LaporanRoute,
+  PengaturanRoute: PengaturanRoute,
+  PenggunaRoute: PenggunaRoute,
+  RiwayatPemeriksaanRoute: RiwayatPemeriksaanRoute,
+  StatusPmkRoute: StatusPmkRoute,
+  VaksinasiRoute: VaksinasiRoute,
+  VerifikasiRfidRoute: VerifikasiRfidRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
